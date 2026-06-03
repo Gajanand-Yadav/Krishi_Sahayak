@@ -1,0 +1,24 @@
+.aicropprediction {
+  width: 100%;
+  padding: 100px;
+  background: #f9f9f9;
+  border-top: 2px solid #ccc;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+.aicrop-description {
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 800px;
+  margin: 150px;
+  /* padding-top: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-bottom: 10px; */
+}

@@ -1,0 +1,229 @@
+/* src/components/Login.css */
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width:100vw;
+    background: linear-gradient(135deg, #f5fff2, #e1f5e1); /* Soft green gradient for light mode */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease; /* Use theme variable */
+}
+
+/* Added rule for dark mode background */
+body.dark .login-page {
+    background: var(--background-primary);
+}
+
+.login-container {
+    background-color: var(--card-background); /* Use theme variable */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px var(--shadow-color); /* Use theme variable */
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+    border: 1px solid var(--border-color); /* Added for consistency */
+}
+
+.back-to-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-secondary); /* Use theme variable */
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.back-to-home:hover {
+    color: var(--primary-color); /* Use theme variable */
+}
+
+.back-to-home svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.login-header {
+    margin-bottom: 30px;
+}
+
+.login-logo {
+    width: 70px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+@media (max-width: 500px) {
+          .login-container {
+            padding: 30px 20px;
+          }
+          .login-header h2 {
+            font-size: 22px;
+          }
+        }
+.login-header h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text-primary); /* Use theme variable */
+    margin: 0 0 5px;
+}
+
+.login-header p {
+    font-size: 15px;
+    color: var(--text-secondary); /* Use theme variable */
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary); /* Use theme variable */
+    width: 20px;
+    height: 20px;
+    pointer-events: none; /* Make icon unclickable */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 14px 14px 50px;
+    border: 1px solid var(--border-color); /* Use theme variable */
+    background-color: var(--background-secondary); /* Use theme variable */
+    color: var(--text-primary); /* Use theme variable */
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Use theme variable */
+    /* A modern way to create a semi-transparent focus ring from a theme color */
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 25%, transparent);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary); /* Use theme variable */
+    cursor: pointer;
+}
+
+.remember-me input {
+    margin-right: 8px;
+    accent-color: var(--primary-color); /* Use theme variable */
+}
+
+.forgot-password {
+    color: var(--primary-color); /* Use theme variable */
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.btn-login-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--primary-color); /* Use theme variable */
+    color: var(--text-on-primary); /* Use theme variable */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login-submit:hover {
+    background-color: var(--primary-color-dark); /* Use theme variable */
+}
+
+.btn-login-submit:active {
+    transform: scale(0.98);
+}
+
+.login-footer {
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--text-secondary); /* Use theme variable */
+}
+
+.login-footer a {
+    color: var(--primary-color); /* Use theme variable */
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-background); /* Use theme variable */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow-color); /* Use theme variable */
+    text-align: center;
+    max-width: 350px;
+    width: 100%;
+    border: 1px solid var(--border-color); /* Added for consistency */
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--text-primary); /* Use theme variable */
+}
+
+.modal-content button {
+    background-color: var(--primary-color); /* Use theme variable */
+    color: var(--text-on-primary); /* Use theme variable */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: var(--primary-color-dark); /* Use theme variable */
+}

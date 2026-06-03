@@ -1,0 +1,53 @@
+/* src/Theme.css */
+
+/* :root defines variables for the default (light) theme */
+:root {
+  /* Backgrounds */
+  --background-primary: #ffffff;    /* Main page background */
+  --background-secondary: #f8f9fa;  /* Lighter sections */
+  --card-background: #ffffff;       /* Card backgrounds */
+  
+  /* Text */
+  --text-primary: #212529;          /* Main text, headings */
+  --text-secondary: #6c757d;        /* Subheadings, descriptions */
+  --text-on-primary: #ffffff;       /* Text on dark/colored backgrounds */
+
+  /* Borders & Shadows */
+  --border-color: #dee2e6;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+
+  /* Primary Colors (Greens) */
+  --primary-color: #4CAF50;
+  --primary-color-dark: #388e3c;
+  
+  /* Special Section Backgrounds */
+  --footer-background: #1f2937;
+  --hero-gradient-start: #166534;
+  --hero-gradient-end: #16a34a;
+}
+
+/* body.dark redefines the variables for the dark theme */
+body.dark {
+  /* Backgrounds */
+  --background-primary: #121212;
+  --background-secondary: #1e1e1e;
+  --card-background: #2a2a2a;
+  
+  /* Text */
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --text-on-primary: #ffffff;
+
+  /* Borders & Shadows */
+  --border-color: #444444;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+
+  /* Primary Colors (Greens) */
+  --primary-color: #66bb6a;
+  --primary-color-dark: #4caf50;
+  
+  /* Special Section Backgrounds */
+  --footer-background: #1e1e1e;
+  --hero-gradient-start: #22c55e;
+  --hero-gradient-end: #166534;
+}

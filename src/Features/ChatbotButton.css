@@ -1,0 +1,31 @@
+.chatbot-fab {
+  position: fixed; /* Keeps it on screen during scroll */
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000; /* Ensures it's on top of other content */
+  
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--text-on-primary);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  box-shadow: 0 4px 12px var(--shadow-color);
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+}
+
+.chatbot-fab:hover {
+  transform: scale(1.1);
+  background: var(--primary-color-dark);
+}
+
+/* This rule is important for making the icon visible */
+.chatbot-icon {
+  width: 32px;
+  height: 32px;
+}
