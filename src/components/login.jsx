@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'; // Import useState
 import { Link } from 'react-router-dom';
 import feather from 'feather-icons';
-import './Login.css';
+import './login.css';
 import logoImage from '../assets/logo.png';
 
 const Login = () => {
