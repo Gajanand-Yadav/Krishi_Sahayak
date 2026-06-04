@@ -11,10 +11,11 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.47.0",
-    "@clerk/nextjs": "^6.32.0",
+    "@clerk/nextjs": "^7.4.3",
     "@tailwindcss/vite": "^4.1.13",
     "aos": "^2.3.4",
     "feather-icons": "^4.29.2",
+    "next": "^16.2.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-feather": "^2.0.10",

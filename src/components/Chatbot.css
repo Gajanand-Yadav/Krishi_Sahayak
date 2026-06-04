@@ -115,3 +115,102 @@
 .chat-input-form button:hover {
   background-color: var(--primary-color-dark); /* Using a variable is more consistent */
 }
+/* ============================================================
+   CHATBOT – Mobile responsiveness improvements
+   ============================================================ */
+
+/* Base fix: use flex column so input is always pinned at bottom */
+.chatbot-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chatbot-page {
+    display: flex;
+    flex-direction: column;
+    /* Use small-viewport height so the page never overflows when
+       the mobile browser address bar is visible */
+    height: 100svh;        /* svh = small viewport height – best for mobile */
+    height: 100dvh;        /* dvh = dynamic (adjusts when browser bar hides) */
+    /* fallback for browsers without svh/dvh */
+    height: calc(var(--vh, 1vh) * 100);
+    max-height: -webkit-fill-available; /* iOS Safari fallback */
+    overflow: hidden;      /* prevent the page itself from scrolling */
+}
+
+/* chat-messages fills all remaining space and scrolls internally */
+.chat-messages {
+    flex: 1 1 0;
+    min-height: 0;         /* critical – without this flex won't shrink */
+    overflow-y: auto;
+}
+
+/* input bar never shrinks */
+.chat-input-form {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .chatbot-wrapper {
+        width: 100%;
+        padding: 0;
+    }
+
+    .chatbot-header {
+        padding: 0.75rem 1rem;
+        flex-shrink: 0;
+    }
+
+    .chatbot-header h1 {
+        font-size: 1rem;
+    }
+
+    .back-button {
+        font-size: 0.85rem;
+    }
+
+    .chat-messages {
+        padding: 1rem 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .message-bubble {
+        max-width: 88%;
+        font-size: 0.9rem;
+        padding: 0.65rem 0.9rem;
+    }
+
+    .chat-input-form {
+        padding: 0.75rem;
+        /* lift above iPhone home indicator */
+        padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    }
+
+    .chat-input-form form {
+        gap: 0.5rem;
+    }
+
+    .chat-input-form input {
+        font-size: 0.95rem;
+        padding: 0.65rem 0.85rem;
+    }
+
+    .chat-input-form button {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 360px) {
+    .message-bubble {
+        max-width: 95%;
+        font-size: 0.85rem;
+    }
+
+    .chatbot-header h1 {
+        font-size: 0.9rem;
+    }
+}

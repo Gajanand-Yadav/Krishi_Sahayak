@@ -1,8 +1,8 @@
-.chatbot-fab {
-  position: fixed; /* Keeps it on screen during scroll */
+ .chatbot-fab {
+  position: fixed; 
   bottom: 2rem;
   right: 2rem;
-  z-index: 1000; /* Ensures it's on top of other content */
+  z-index: 1000; 
   
   width: 60px;
   height: 60px;
@@ -24,8 +24,7 @@
   background: var(--primary-color-dark);
 }
 
-/* This rule is important for making the icon visible */
 .chatbot-icon {
   width: 32px;
   height: 32px;
-}
+} 
