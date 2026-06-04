@@ -15,11 +15,20 @@ const Chatbot = () => {
   const chatContainerRef = useRef(null); // UPDATED Ref
 
   // UPDATED useEffect to conditionally scroll
+  // Fix mobile viewport height (iOS Safari address bar issue)
+  useEffect(() => {
+    const setVh = () => {
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    };
+    setVh();
+    window.addEventListener('resize', setVh);
+    return () => window.removeEventListener('resize', setVh);
+  }, []);
+
   useEffect(() => {
     feather.replace();
     const container = chatContainerRef.current;
     if (container) {
-      // Only scroll if the content height is greater than the visible area
       if (container.scrollHeight > container.clientHeight) {
         container.scrollTop = container.scrollHeight;
       }
